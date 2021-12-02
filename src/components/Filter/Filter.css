@@ -1,0 +1,56 @@
+.filter-transfer {
+    padding: 20px 0;
+    width: 232px;
+    height: 212px;
+    background-color: var(--basic-white);
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
+}
+.filter-transfer__title {
+    text-transform: uppercase;    
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    line-height: 12px;
+    margin: 0;
+    padding: 0 20px;
+}
+.transfer-options {
+    margin: 10px 0;
+    padding: 0;
+}
+.transfer-options__option {
+    padding: 10px 50px;
+    list-style: none;
+    font-size: 13px;
+    font-weight: 400;
+    position: relative;
+
+}
+.transfer-options__option:hover {
+    background-color: #F1FCFF;
+    cursor: pointer;
+}
+input[type="checkbox"] + span {
+    display: block;
+}
+input[type="checkbox"] + span::before {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../assets/checkbox-unchecked.svg");
+    content: "";
+}
+input[type="checkbox"]:checked + span::after {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../assets/checkbox-checked.svg");
+    content: "";
+}
+input[type="checkbox"]:checked  + span::before {
+    display: none;
+}
