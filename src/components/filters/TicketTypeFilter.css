@@ -1,0 +1,33 @@
+.ticket-type-filter {
+    display: flex;   
+    margin-left: auto; 
+    width: 504px;
+}
+.type-btn {        
+    box-sizing: border-box;
+    padding: 15px;
+    width: 168px;
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    text-transform: uppercase;
+    border: 0;
+    box-shadow: inset 0 1px 0 #DFE5EC, inset 0 -1px 0 #DFE5EC, inset -1px 0 0 #DFE5EC;
+    background-color: var(--basic-white);
+}
+.type-btn:first-child {
+    border-radius: 5px 0 0 5px;
+    box-shadow: inset 0 1px 0 #DFE5EC, inset 0 -1px 0 #DFE5EC, inset 1px 0 0 #DFE5EC, inset -1px 0 0 #DFE5EC;
+}
+.type-btn:last-child {
+    border-radius: 0 5px 5px 0;
+}
+.type-btn.active {
+    background-color: var(--basic-blue);
+    color: var(--basic-white);
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
+}
+.type-btn:hover {
+    cursor: pointer;
+}

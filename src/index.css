@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 :root {
-  --basic-bg: #E5E5E5;
+  --basic-bg: #F3F7FA;
   --basic-white: #FFFFFF;
+  --basic-blue: #2196F3;
   --main--font-color-dark: #4A4A4A;
   --main--font-color-light: #A0B0B9;
   --main--font-family: "Open Sans", "Arial", sans-serif;

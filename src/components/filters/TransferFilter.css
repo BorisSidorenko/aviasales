@@ -1,4 +1,4 @@
-.filter-transfer {
+.transfer-filter {
     padding: 20px 0;
     width: 232px;
     height: 212px;
@@ -6,7 +6,7 @@
     border-radius: 5px;
     box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
 }
-.filter-transfer__title {
+.transfer-filter__title {
     text-transform: uppercase;    
     letter-spacing: 0.5px;
     font-size: 12px;
@@ -25,6 +25,9 @@
     font-weight: 400;
     position: relative;
 
+}
+.transfer-options__option span::first-letter {
+    text-transform: capitalize;
 }
 .transfer-options__option:hover {
     background-color: #F1FCFF;

@@ -3,3 +3,7 @@
   width: 754px;
   margin: 0 auto;
 }
+.container {
+  display: flex;
+  justify-content: space-between;
+}
