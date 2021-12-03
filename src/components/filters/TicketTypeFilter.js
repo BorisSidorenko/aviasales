@@ -11,7 +11,7 @@ export default function TicketTypeFilter({ currentTicketType, changeTicketType }
             <nav>
                 {filterTicketTypeOptions && filterTicketTypeOptions.map((type) => (
                     <button key={type} onClick={() => handleOptionChange(type)} className={`type-btn${currentTicketType === type ? " active" : ""}`}>
-                        {type}
+                        <span>{type}</span>
                     </button>
                 ))}
             </nav>
