@@ -1,7 +1,6 @@
 .transfer-filter {
-    padding: 20px 0;
+    padding: 20px 0 0 0;
     width: 232px;
-    height: 212px;
     background-color: var(--basic-white);
     border-radius: 5px;
     box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);

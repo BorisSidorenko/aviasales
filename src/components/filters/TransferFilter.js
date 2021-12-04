@@ -2,12 +2,19 @@ import './TransferFilter.css';
 import { filterTransferOptions } from '../../utils/constants';
 
 export default function TransferFilter({ currentFilters, changeCurrentFilters }) {
-    const handleFilterChange = (option) => {
-        if (currentFilters.includes(option)) {
-            changeCurrentFilters([...currentFilters.filter((filter) => filter !== option)]);
-        }
-        else {
-            changeCurrentFilters([...currentFilters, option]);
+    const [defaultFilterOption] = filterTransferOptions;
+    const handleFilterChange = (option) => {        
+        switch (option) {
+            case defaultFilterOption:
+                currentFilters.includes(option) ? 
+                    changeCurrentFilters([]):
+                    changeCurrentFilters(filterTransferOptions);
+                break;            
+            default:
+                currentFilters.includes(option) ? 
+                    changeCurrentFilters([...currentFilters.filter((filter) => filter !== option && filter !== defaultFilterOption)]) :                     
+                    changeCurrentFilters([...currentFilters, option].length === filterTransferOptions.length - 1 ? filterTransferOptions : [...currentFilters, option]);                     
+                break;
         }
     }
 

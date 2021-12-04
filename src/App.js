@@ -6,9 +6,8 @@ import TicketTypeFilter from './components/filters/TicketTypeFilter';
 import { filterTransferOptions, filterTicketTypeOptions } from './utils/constants';
 
 function App() {
-  const [defaultTransferFilter] = filterTransferOptions;
   const [defaultTicketTypeFilter] = filterTicketTypeOptions;
-  const [currentTransferFilters, setCurrentTransferFilters] = useState([defaultTransferFilter]);
+  const [currentTransferFilters, setCurrentTransferFilters] = useState(filterTransferOptions);
   const [currentTicketTypeFilter, setCurrentTicketTypeFilter] = useState(defaultTicketTypeFilter);
 
   return (
