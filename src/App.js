@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import './App.css'
 import Logo from './components/logo/Logo';
-import TransferFilter from './components/filters/TransferFilter';
+import TransferSort from './components/filters/TransferSort';
 import TicketTypeFilter from './components/filters/TicketTypeFilter';
 import TicketList from './components/ticket-list/TicketList';
-import { filterTransferOptions, filterTicketTypeOptions } from './utils/constants';
+import { sortTransferOptions, filterTicketTypeOptions } from './utils/constants';
 
 function App() {
   const [defaultTicketTypeFilter] = filterTicketTypeOptions;
-  const [currentTransferFilters, setCurrentTransferFilters] = useState(filterTransferOptions);
+  const [currentTransferSortOptions, setCurrentTransferSortOptions] = useState(sortTransferOptions);
   const [currentTicketTypeFilter, setCurrentTicketTypeFilter] = useState(defaultTicketTypeFilter);
 
   return (
@@ -16,7 +16,7 @@ function App() {
       <Logo />
       <h1 className="visually-hidden">Страница поиска дешевых авиабилетов</h1>
       <div className="outer-container">
-        <TransferFilter currentFilters={currentTransferFilters} changeCurrentFilters={setCurrentTransferFilters}/>
+        <TransferSort transferSortOptions={currentTransferSortOptions} changeCurrentTransferSortOptions={setCurrentTransferSortOptions}/>
         <div className="inner-container">
           <TicketTypeFilter currentTicketType={currentTicketTypeFilter} changeTicketType={setCurrentTicketTypeFilter}/>
           <TicketList />
