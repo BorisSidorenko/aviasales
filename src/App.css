@@ -3,7 +3,12 @@
   width: 754px;
   margin: 0 auto;
 }
-.container {
+.outer-container {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
+}
+.inner-container {
+  display: flex;
+  flex-direction: column;
 }
