@@ -14,10 +14,10 @@ export default function Ticket() {
                     <p className="stops"><span>1 пересадка</span></p>
                 </div>
                 <div className="details-info">
-                    <p className="route"><span>10:45</span> - <span>08:00</span></p>
+                    <p className="route"><span>10:45</span> – <span>08:00</span></p>
                     <p className="duration"><span>21ч 15м</span></p>
                     <p className="stops"><span>HKG</span></p>
-                </div>
+                </div>                
             </div>
             <div className="ticket-details">
                 <div className="details-header">

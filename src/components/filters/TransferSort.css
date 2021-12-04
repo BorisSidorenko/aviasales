@@ -18,12 +18,11 @@
     padding: 0;
 }
 .transfer-options__option {
-    padding: 10px 50px;
+    padding: 11px 50px;
     list-style: none;
     font-size: 13px;
     font-weight: 400;
     position: relative;
-
 }
 .transfer-options__option span::first-letter {
     text-transform: capitalize;
