@@ -1,16 +1,20 @@
 import { useState } from 'react';
+import { useTickets } from './hooks/useServer'
 import './App.css'
 import Logo from './components/logo/Logo';
 import TransferSort from './components/filters/TransferSort';
 import TicketTypeFilter from './components/filters/TicketTypeFilter';
 import TicketList from './components/ticket-list/TicketList';
-import { sortTransferOptions, filterTicketTypeOptions } from './utils/constants';
+import ShowMoreButton from './components/show-more-button/ShowMoreButton';
+import { sortTransferOptions, filterTicketTypeOptions, DISPLAY_TICKETS_BY_DEFAULT } from './utils/constants';
 
-function App() {
+function App() {  
+  const { response, isPending, error } = useTickets();
   const [defaultTicketTypeFilter] = filterTicketTypeOptions;
   const [currentTransferSortOptions, setCurrentTransferSortOptions] = useState(sortTransferOptions);
   const [currentTicketTypeFilter, setCurrentTicketTypeFilter] = useState(defaultTicketTypeFilter);
-
+  const [ticketsToDisplay, setTicketsToDisplay] = useState(DISPLAY_TICKETS_BY_DEFAULT);
+  
   return (
     <div className="App">
       <Logo />
@@ -19,7 +23,10 @@ function App() {
         <TransferSort transferSortOptions={currentTransferSortOptions} changeCurrentTransferSortOptions={setCurrentTransferSortOptions}/>
         <div className="inner-container">
           <TicketTypeFilter currentTicketType={currentTicketTypeFilter} changeTicketType={setCurrentTicketTypeFilter}/>
-          <TicketList />
+          {isPending && <p>Loading...</p>}
+          {error && <p>{error}</p>}
+          {response && <TicketList tickets={response.tickets} amountTodisplay={ticketsToDisplay}/>}
+          {response && response.tickets.length > DISPLAY_TICKETS_BY_DEFAULT && <ShowMoreButton changeDisplayTicketsAmount={setTicketsToDisplay}/>}
         </div>        
       </div>
     </div>
