@@ -1,0 +1,14 @@
+.btn-more {
+    padding: 15px 20px;
+    margin-bottom: 50px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: var(--main--font-family);
+    color: var(--basic-white);
+    background-color: var(--basic-blue);
+    border: 0;
+    border-radius: 5px;
+}
