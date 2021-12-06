@@ -49,3 +49,6 @@
     font-size: 14px;
     color: var(--main--font-color-dark);
 }
+.no-stops {
+    margin-left: 20px;
+}
