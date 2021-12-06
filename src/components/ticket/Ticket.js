@@ -1,4 +1,5 @@
 import "./Ticket.css";
+import { getHoursAndMinutesFromMinutes } from "../../utils/common"; 
 
 export default function Ticket({ ticket }) {   
     const { price, carrier, segments} = ticket; 
@@ -38,7 +39,7 @@ export default function Ticket({ ticket }) {
                     </div>
                     <div className="details-info">
                         <p className="route"><span>10:45</span> – <span>08:00</span></p>
-                        <p className="duration"><span>{segment.duration}</span></p>
+                        <p className="duration"><span>{getHoursAndMinutesFromMinutes(segment.duration)}</span></p>
                         <p className="stops"><span className={segment.stops.length > 0 ? "" : "no-stops"}>{getStopsFromSegment(segment)}</span></p>
                     </div>                
                 </div>     
