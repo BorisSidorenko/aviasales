@@ -1,5 +1,5 @@
 import "./Ticket.css";
-import { getHoursAndMinutesFromMinutes } from "../../utils/common"; 
+import { getPriceFormatted, getDurationFormatted, getTimeFromDate, addMinutesToDate } from "../../utils/common"; 
 
 export default function Ticket({ ticket }) {   
     const { price, carrier, segments} = ticket; 
@@ -20,14 +20,13 @@ export default function Ticket({ ticket }) {
                 return `${stops.length} пересадок`;
         }
     }
-    const getStopsFromSegment = ({ stops }) => stops.length > 0 ? stops.join(", ") : "—";
 
-    const getPrice = (price) => price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    const getStopsFromSegment = ({ stops }) => stops.length > 0 ? stops.join(", ") : "—";
 
     return (
         <article className="ticket">
             <div className="ticket-header">
-                <p className="price">{`${getPrice(price)} Р`}</p>
+                <p className="price">{getPriceFormatted(price)}</p>
                 <img src={`https://pics.avs.io/110/36/${carrier}.png`} className="company-logo" alt={`Логотип авиакомпании ${carrier}`}/>
             </div>
             {segments.map((segment) => (
@@ -38,8 +37,8 @@ export default function Ticket({ ticket }) {
                         <p className="stops"><span>{getStopsHeader(segment)}</span></p>
                     </div>
                     <div className="details-info">
-                        <p className="route"><span>10:45</span> – <span>08:00</span></p>
-                        <p className="duration"><span>{getHoursAndMinutesFromMinutes(segment.duration)}</span></p>
+                        <p className="route"><span>{getTimeFromDate(segment.date)}</span> – <span>{addMinutesToDate(segment.date, segment.duration)}</span></p>
+                        <p className="duration"><span>{getDurationFormatted(segment.duration)}</span></p>
                         <p className="stops"><span className={segment.stops.length > 0 ? "" : "no-stops"}>{getStopsFromSegment(segment)}</span></p>
                     </div>                
                 </div>     
