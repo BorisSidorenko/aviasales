@@ -2,17 +2,17 @@ import { useState } from 'react';
 import { useTickets } from './hooks/useServer'
 import './App.css'
 import Logo from './components/logo/Logo';
-import TransferSort from './components/filters/TransferSort';
-import TicketTypeFilter from './components/filters/TicketTypeFilter';
+import TransferFilter from './components/filters/TransferFilter';
+import TicketTypeSort from './components/filters/TicketTypeSort';
 import TicketList from './components/ticket-list/TicketList';
 import ShowMoreButton from './components/show-more-button/ShowMoreButton';
-import { sortTransferOptions, filterTicketTypeOptions, DISPLAY_TICKETS_BY_DEFAULT } from './utils/constants';
+import { filterTransferOptions, sortTicketTypeOptions, DISPLAY_TICKETS_BY_DEFAULT } from './utils/constants';
 
 function App() {  
   const { response, isPending, error } = useTickets();
-  const [defaultTicketTypeFilter] = filterTicketTypeOptions;
-  const [currentTransferSortOptions, setCurrentTransferSortOptions] = useState(sortTransferOptions);
-  const [currentTicketTypeFilter, setCurrentTicketTypeFilter] = useState(defaultTicketTypeFilter);
+  const [defaultTicketTypeSort] = sortTicketTypeOptions;
+  const [currentTransferFilterOptions, setCurrentTransferFilterOptions] = useState(filterTransferOptions);
+  const [currentSortOption, setCurrentSortOption] = useState(defaultTicketTypeSort);
   const [ticketsToDisplay, setTicketsToDisplay] = useState(DISPLAY_TICKETS_BY_DEFAULT);
   
   return (
@@ -20,9 +20,9 @@ function App() {
       <Logo />
       <h1 className="visually-hidden">Страница поиска дешевых авиабилетов</h1>
       <div className="outer-container">
-        <TransferSort transferSortOptions={currentTransferSortOptions} changeCurrentTransferSortOptions={setCurrentTransferSortOptions}/>
+        <TransferFilter transferFilterOptions={currentTransferFilterOptions} changeCurrentTransferFilterOptions={setCurrentTransferFilterOptions}/>
         <div className="inner-container">
-          <TicketTypeFilter currentTicketType={currentTicketTypeFilter} changeTicketType={setCurrentTicketTypeFilter}/>
+          <TicketTypeSort currentSortOption={currentSortOption} changeSortOption={setCurrentSortOption}/>
           {isPending && <p>Loading...</p>}
           {error && <p>{error}</p>}
           {response && <TicketList tickets={response.tickets} amountTodisplay={ticketsToDisplay}/>}
