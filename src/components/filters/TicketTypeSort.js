@@ -1,5 +1,5 @@
 import './TicketTypeSort.css';
-import { sortTicketTypeOptions } from '../../utils/constants';
+import { sortTransferOptions } from '../../utils/constants';
 
 export default function TicketTypeSort({ currentSortOption, changeSortOption }) {
     const handleOptionChange = (option) => {
@@ -9,11 +9,15 @@ export default function TicketTypeSort({ currentSortOption, changeSortOption }) 
     return (
         <div className="ticket-type-sort">
             <nav>
-                {sortTicketTypeOptions && sortTicketTypeOptions.map((option) => (
-                    <button key={option} onClick={() => handleOptionChange(option)} className={`type-btn${currentSortOption === option ? " active" : ""}`}>
-                        <span>{option}</span>
-                    </button>
-                ))}
+                {sortTransferOptions && Object.entries(sortTransferOptions).map((prop) => {
+                    const [key, value] = prop;
+
+                    return (
+                        <button key={key} onClick={() => handleOptionChange(value)} className={`type-btn${currentSortOption === value ? " active" : ""}`}>
+                            <span>{value}</span>
+                        </button>
+                    )
+                })}
             </nav>
         </div>
     )

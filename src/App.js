@@ -6,13 +6,13 @@ import TransferFilter from './components/filters/TransferFilter';
 import TicketTypeSort from './components/filters/TicketTypeSort';
 import TicketList from './components/ticket-list/TicketList';
 import ShowMoreButton from './components/show-more-button/ShowMoreButton';
-import { filterTransferOptions, sortTicketTypeOptions, DISPLAY_TICKETS_BY_DEFAULT } from './utils/constants';
+import { filterTransferOptions, DISPLAY_TICKETS_BY_DEFAULT, sortTransferOptions } from './utils/constants';
+import { getSortedTickets } from "../src/utils/common";
 
 function App() {  
   const { response, isPending, error } = useTickets();
-  const [defaultTicketTypeSort] = sortTicketTypeOptions;
   const [currentTransferFilterOptions, setCurrentTransferFilterOptions] = useState(filterTransferOptions);
-  const [currentSortOption, setCurrentSortOption] = useState(defaultTicketTypeSort);
+  const [currentSortOption, setCurrentSortOption] = useState(sortTransferOptions.price);
   const [ticketsToDisplay, setTicketsToDisplay] = useState(DISPLAY_TICKETS_BY_DEFAULT);
   
   return (
@@ -25,7 +25,7 @@ function App() {
           <TicketTypeSort currentSortOption={currentSortOption} changeSortOption={setCurrentSortOption}/>
           {isPending && <p>Loading...</p>}
           {error && <p>{error}</p>}
-          {response && <TicketList tickets={response.tickets} amountTodisplay={ticketsToDisplay}/>}
+          {response && <TicketList tickets={getSortedTickets(response.tickets, currentSortOption)} amountTodisplay={ticketsToDisplay}/>}
           {response && response.tickets.length > DISPLAY_TICKETS_BY_DEFAULT && <ShowMoreButton changeDisplayTicketsAmount={setTicketsToDisplay}/>}
         </div>        
       </div>

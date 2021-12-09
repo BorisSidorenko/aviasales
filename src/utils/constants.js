@@ -1,6 +1,10 @@
 export const filterTransferOptions = ["все", "без пересадок", "1 пересадка", "2 пересадки", "3 пересадки"];
 
-export const sortTicketTypeOptions = ["самый дешевый", "самый быстрый", "оптимальный"];
+export const sortTransferOptions = {
+    price: "самый дешевый",
+    duration: "самый быстрый",
+    optimal: "оптимальный"
+}
 
 export const searchURL = "https://front-test.beta.aviasales.ru/search";
 
