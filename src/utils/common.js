@@ -26,11 +26,24 @@ const getSortedTicketsByPrice = (ticketsToSort, ascOrder = true) => {
 
 const getSegmentsDurationReducer = (currentSegment, nextSegment) => currentSegment.duration + nextSegment.duration;
 
+const getSegmentsStopsReducer = (currentSegment, nextSegment) => currentSegment.stops.length + nextSegment.stops.length;
+
 const getSortedTicketsByDuration = (ticketsToSort, ascOrder = true) => {
     return ticketsToSort.sort((currentTicket, nextTicket) => {
         return ascOrder ? 
         currentTicket.segments.reduce(getSegmentsDurationReducer) - nextTicket.segments.reduce(getSegmentsDurationReducer) :
         nextTicket.segments.reduce(getSegmentsDurationReducer) - currentTicket.segments.reduce(getSegmentsDurationReducer);
+    });
+}
+
+const getOptimatlSortedTickets = (ticketsToSort) => {    
+    return ticketsToSort.sort((currentTicket, nextTicket) => {        
+        if (currentTicket.segments.reduce(getSegmentsStopsReducer) > nextTicket.segments.reduce(getSegmentsStopsReducer)) return 1;
+        if (currentTicket.segments.reduce(getSegmentsStopsReducer) < nextTicket.segments.reduce(getSegmentsStopsReducer)) return -1;
+        if (currentTicket.price > nextTicket.price) return 1;
+        if (currentTicket.price < nextTicket.price) return -1;
+
+        return 0;
     });
 }
 
@@ -43,6 +56,6 @@ export const getSortedTickets = (tickets, currentSortOption) => {
         case sortTransferOptions.duration:        
             return getSortedTicketsByDuration(ticketsToSort);
         default:
-            return ticketsToSort;
+            return getOptimatlSortedTickets(ticketsToSort);
     }
 }
