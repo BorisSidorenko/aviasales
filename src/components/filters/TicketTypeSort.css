@@ -1,4 +1,5 @@
-.ticket-type-filter {
+.ticket-type-sort {
+    position: relative;
     display: flex;   
     margin-left: auto; 
     width: 504px;

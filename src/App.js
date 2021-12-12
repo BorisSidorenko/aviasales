@@ -10,7 +10,7 @@ import { filterTransferOptions, DISPLAY_TICKETS_BY_DEFAULT, sortTransferOptions 
 import { getSortedTickets } from "../src/utils/common";
 
 function App() {  
-  const { response, isPending, error } = useTickets();
+  const { tickets, isPending, error } = useTickets();
   const [currentTransferFilterOptions, setCurrentTransferFilterOptions] = useState(filterTransferOptions);
   const [currentSortOption, setCurrentSortOption] = useState(sortTransferOptions.price);
   const [ticketsToDisplay, setTicketsToDisplay] = useState(DISPLAY_TICKETS_BY_DEFAULT);
@@ -20,13 +20,12 @@ function App() {
       <Logo />
       <h1 className="visually-hidden">Страница поиска дешевых авиабилетов</h1>
       <div className="outer-container">
-        <TransferFilter transferFilterOptions={currentTransferFilterOptions} changeCurrentTransferFilterOptions={setCurrentTransferFilterOptions}/>
+        <TransferFilter transferFilterOptions={currentTransferFilterOptions} changeCurrentTransferFilterOptions={setCurrentTransferFilterOptions} isLoading={isPending}/>
         <div className="inner-container">
-          <TicketTypeSort currentSortOption={currentSortOption} changeSortOption={setCurrentSortOption}/>
-          {isPending && <p>Loading...</p>}
+          <TicketTypeSort currentSortOption={currentSortOption} changeSortOption={setCurrentSortOption} isLoading={isPending}/>          
           {error && <p>{error}</p>}
-          {response && <TicketList tickets={getSortedTickets(response.tickets, currentSortOption)} amountTodisplay={ticketsToDisplay}/>}
-          {response && response.tickets.length > DISPLAY_TICKETS_BY_DEFAULT && <ShowMoreButton changeDisplayTicketsAmount={setTicketsToDisplay}/>}
+          {tickets && <TicketList tickets={getSortedTickets(tickets, currentSortOption)} amountTodisplay={ticketsToDisplay} isLoading={isPending}/>}
+          {!isPending &&  tickets && tickets.length > DISPLAY_TICKETS_BY_DEFAULT && <ShowMoreButton changeDisplayTicketsAmount={setTicketsToDisplay}/>}
         </div>        
       </div>
     </div>

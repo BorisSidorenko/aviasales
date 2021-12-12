@@ -1,13 +1,15 @@
 import './TicketTypeSort.css';
 import { sortTransferOptions } from '../../utils/constants';
+import Loading from '../loading/Loading';
 
-export default function TicketTypeSort({ currentSortOption, changeSortOption }) {
+export default function TicketTypeSort({ currentSortOption, changeSortOption, isLoading }) {
     const handleOptionChange = (option) => {
         changeSortOption(option);
     }
 
     return (
         <div className="ticket-type-sort">
+            {isLoading && <Loading />}
             <nav>
                 {sortTransferOptions && Object.entries(sortTransferOptions).map((prop) => {
                     const [key, value] = prop;

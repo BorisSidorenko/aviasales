@@ -7,3 +7,8 @@
     padding: 0;
     list-style-type: none;
 }
+.ticket-item-loading {
+    position: relative;
+    width: 502px;
+    height: 184px;
+}
