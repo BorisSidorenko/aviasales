@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { searchURL, ticketsURL } from '../utils/constants';
-
+import axios from "axios";
 
 export const useTickets = () => {    
-    const [response, setResponse] = useState(null);
+    const [tickets, setTickets] = useState([]);    
     const [isPending, setIsPending] = useState(false);
     const [error, setError] = useState(null);
 
@@ -11,24 +11,39 @@ export const useTickets = () => {
         setError(null);
         setIsPending(true);
 
-        const getTickets = async () => {
+        const getSearchId = async () => {
             try {
-                let searchIdResponse = await fetch(searchURL);
-                searchIdResponse = await searchIdResponse.json();
-
-                let ticketsResponse = await fetch(`${ticketsURL}/tickets?searchId=${searchIdResponse.searchId}`)
-                ticketsResponse = await ticketsResponse.json();
-
-                setResponse(ticketsResponse);
-                setIsPending(false);
+                return await axios.get(searchURL);                     
             } catch (err) {
                 console.log(err.message);
-                setError(err.message);
                 setIsPending(false);
+                setError(err.message);                
             }
         }
-        getTickets();
+
+        const subscribe = async (searchId) => {            
+            try {                
+                setIsPending(true);
+
+                const ticketsResponse = await axios.get(`${ticketsURL}/tickets?searchId=${searchId}`);
+                setTickets(prev => [...prev, ...ticketsResponse.data.tickets]);
+
+                if (!ticketsResponse.data.stop) {
+                    await subscribe(searchId);                    
+                } else {
+                    setIsPending(false);
+                }
+            } catch (error) {
+                setTimeout(() => {
+                    subscribe(searchId);
+                }, 1000);
+            }
+        }
+
+        getSearchId()
+            .then(({data}) => subscribe(data.searchId));        
+
     }, []);
 
-    return { response, isPending, error };
+    return { tickets, isPending, error };
 }
