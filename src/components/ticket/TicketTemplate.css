@@ -1,0 +1,66 @@
+.ticket-template {
+    position: relative;
+    margin: 20px 0;    
+    padding: 19px 20px 20px 22px;
+    width: 502px;    
+    background-color: var(--basic-white);
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.10);
+}
+.ticket-template-header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ticket-template-price {
+    width: 147px;
+    height: 24px;
+}
+.ticket-template-logo {
+    width: 110px;
+    height: 36px;
+}
+.ticket-template-header .ticket-template-price,
+.ticket-template-header .ticket-template-logo,
+.wrapper div {
+    background-color: rgb(233, 231, 231);
+}
+.ticket-template-details {
+    display: grid;   
+    margin-bottom: 10px;
+}
+.ticket-template-details:last-child {
+    margin-bottom: 0;
+}
+.ticket-template-details .ticket-template-header,
+.ticket-template-details  .ticket-template-info {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    margin-bottom: 0;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.wrapper .route-header,
+.wrapper .duration-header,
+.wrapper .stops-header {
+    width: 141px;
+    height: 17px;
+    margin-bottom: 5px;
+}
+.wrapper .route,
+.wrapper .duration,
+.wrapper .stops {
+    width: 141px;
+    height: 15px;
+}
+.ticket-template-row {
+    margin-bottom: 15px;
+}
+.ticket-template-row:last-child {
+    margin-bottom: 0;
+}
