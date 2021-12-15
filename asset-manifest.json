@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/BorisSidorenko/aviasales/static/css/main.048bffc9.chunk.css",
-    "main.js": "/BorisSidorenko/aviasales/static/js/main.9987d6a9.chunk.js",
-    "main.js.map": "/BorisSidorenko/aviasales/static/js/main.9987d6a9.chunk.js.map",
-    "runtime-main.js": "/BorisSidorenko/aviasales/static/js/runtime-main.7788d4ee.js",
-    "runtime-main.js.map": "/BorisSidorenko/aviasales/static/js/runtime-main.7788d4ee.js.map",
-    "static/js/2.92e93b93.chunk.js": "/BorisSidorenko/aviasales/static/js/2.92e93b93.chunk.js",
-    "static/js/2.92e93b93.chunk.js.map": "/BorisSidorenko/aviasales/static/js/2.92e93b93.chunk.js.map",
-    "index.html": "/BorisSidorenko/aviasales/index.html",
-    "static/css/main.048bffc9.chunk.css.map": "/BorisSidorenko/aviasales/static/css/main.048bffc9.chunk.css.map",
-    "static/js/2.92e93b93.chunk.js.LICENSE.txt": "/BorisSidorenko/aviasales/static/js/2.92e93b93.chunk.js.LICENSE.txt",
-    "static/media/Logo.472c0451.svg": "/BorisSidorenko/aviasales/static/media/Logo.472c0451.svg",
-    "static/media/TransferFilter.css": "/BorisSidorenko/aviasales/static/media/checkbox-unchecked.ad129cbf.svg"
+    "main.css": "/BorisSidorenko/static/css/main.e588ed66.chunk.css",
+    "main.js": "/BorisSidorenko/static/js/main.9987d6a9.chunk.js",
+    "main.js.map": "/BorisSidorenko/static/js/main.9987d6a9.chunk.js.map",
+    "runtime-main.js": "/BorisSidorenko/static/js/runtime-main.7ffb05e4.js",
+    "runtime-main.js.map": "/BorisSidorenko/static/js/runtime-main.7ffb05e4.js.map",
+    "static/js/2.92e93b93.chunk.js": "/BorisSidorenko/static/js/2.92e93b93.chunk.js",
+    "static/js/2.92e93b93.chunk.js.map": "/BorisSidorenko/static/js/2.92e93b93.chunk.js.map",
+    "index.html": "/BorisSidorenko/index.html",
+    "static/css/main.e588ed66.chunk.css.map": "/BorisSidorenko/static/css/main.e588ed66.chunk.css.map",
+    "static/js/2.92e93b93.chunk.js.LICENSE.txt": "/BorisSidorenko/static/js/2.92e93b93.chunk.js.LICENSE.txt",
+    "static/media/Logo.472c0451.svg": "/BorisSidorenko/static/media/Logo.472c0451.svg",
+    "static/media/TransferFilter.css": "/BorisSidorenko/static/media/checkbox-unchecked.ad129cbf.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7788d4ee.js",
+    "static/js/runtime-main.7ffb05e4.js",
     "static/js/2.92e93b93.chunk.js",
-    "static/css/main.048bffc9.chunk.css",
+    "static/css/main.e588ed66.chunk.css",
     "static/js/main.9987d6a9.chunk.js"
   ]
 }
