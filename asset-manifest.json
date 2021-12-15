@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/BorisSidorenko/aviasales/static/css/main.048bffc9.chunk.css",
+    "main.js": "/BorisSidorenko/aviasales/static/js/main.9987d6a9.chunk.js",
+    "main.js.map": "/BorisSidorenko/aviasales/static/js/main.9987d6a9.chunk.js.map",
+    "runtime-main.js": "/BorisSidorenko/aviasales/static/js/runtime-main.7788d4ee.js",
+    "runtime-main.js.map": "/BorisSidorenko/aviasales/static/js/runtime-main.7788d4ee.js.map",
+    "static/js/2.92e93b93.chunk.js": "/BorisSidorenko/aviasales/static/js/2.92e93b93.chunk.js",
+    "static/js/2.92e93b93.chunk.js.map": "/BorisSidorenko/aviasales/static/js/2.92e93b93.chunk.js.map",
+    "index.html": "/BorisSidorenko/aviasales/index.html",
+    "static/css/main.048bffc9.chunk.css.map": "/BorisSidorenko/aviasales/static/css/main.048bffc9.chunk.css.map",
+    "static/js/2.92e93b93.chunk.js.LICENSE.txt": "/BorisSidorenko/aviasales/static/js/2.92e93b93.chunk.js.LICENSE.txt",
+    "static/media/Logo.472c0451.svg": "/BorisSidorenko/aviasales/static/media/Logo.472c0451.svg",
+    "static/media/TransferFilter.css": "/BorisSidorenko/aviasales/static/media/checkbox-unchecked.ad129cbf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7788d4ee.js",
+    "static/js/2.92e93b93.chunk.js",
+    "static/css/main.048bffc9.chunk.css",
+    "static/js/main.9987d6a9.chunk.js"
+  ]
+}
