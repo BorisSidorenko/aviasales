@@ -1,10 +1,24 @@
-export const filterTransferOptions = ["все", "без пересадок", "1 пересадка", "2 пересадки", "3 пересадки"];
+export const filterOptions = {
+    ALL: "все",
+    DIRECT: "без пересадок",
+    ONE_STOP: "1 пересадка",
+    TWO_STOPS: "2 пересадки",
+    THREE_STOPS: "3 пересадки"
+};
 
 export const sortTransferOptions = {
-    price: "самый дешевый",
-    duration: "самый быстрый",
-    optimal: "оптимальный"
+    PRICE: "самый дешевый",
+    DURATION: "самый быстрый",
+    OPTIMAL: "оптимальный"
 }
+
+export const filterOptionsMap = new Map([
+    [filterOptions.ALL, -1],
+    [filterOptions.DIRECT, 0],
+    [filterOptions.ONE_STOP, 1],
+    [filterOptions.TWO_STOPS, 2],
+    [filterOptions.THREE_STOPS, 3]
+]);
 
 export const searchURL = "https://front-test.beta.aviasales.ru/search";
 

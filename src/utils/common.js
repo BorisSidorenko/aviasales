@@ -1,4 +1,4 @@
-import { sortTransferOptions } from "./constants";
+import { sortTransferOptions, filterOptions, filterOptionsMap } from "./constants";
 
 export const getPriceFormatted = (price) => `${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} Р`;
 
@@ -47,13 +47,28 @@ const getOptimatlSortedTickets = (ticketsToSort) => {
     });
 }
 
-export const getSortedTickets = (tickets, currentSortOption) => {        
-    const ticketsToSort = tickets.slice();  
+const getFilteredTickets = (tickets, currentFilterOptions) => {
+    if (currentFilterOptions.includes(filterOptions.ALL)) {
+        return tickets;
+    } 
+
+    let filteredTickets = [];
+
+    currentFilterOptions.forEach((option) => {
+        const filteredTicketsByOption = tickets.filter((ticket) => ticket.segments.every((segment) => segment.stops.length === filterOptionsMap.get(option)));
+        filteredTickets = [...filteredTickets, ...filteredTicketsByOption];
+    })    
+
+    return filteredTickets;
+}
+
+export const getSortedTickets = (tickets, currentSortOption, currentFilterOptions) => {        
+    const ticketsToSort = getFilteredTickets(tickets, currentFilterOptions);
     
     switch (currentSortOption) {
-        case sortTransferOptions.price:    
+        case sortTransferOptions.PRICE:            
             return getSortedTicketsByPrice(ticketsToSort);
-        case sortTransferOptions.duration:        
+        case sortTransferOptions.DURATION:        
             return getSortedTicketsByDuration(ticketsToSort);
         default:
             return getOptimatlSortedTickets(ticketsToSort);

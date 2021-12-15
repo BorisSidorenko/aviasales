@@ -1,20 +1,21 @@
 import './TransferFilter.css';
-import { filterTransferOptions } from '../../utils/constants';
+import { filterOptions, filterOptionsMap } from '../../utils/constants';
 import Loading from '../loading/Loading';
 
 export default function TransferFilter({ transferFilterOptions, changeCurrentTransferFilterOptions, isLoading }) {
-    const [defaultFilterOption] = filterTransferOptions;
-    const handleFilterOptionChange = (option) => {        
+    const allOptions = [...filterOptionsMap.keys()];    
+
+    const handleFilterOptionChange = (option) => {    
         switch (option) {
-            case defaultFilterOption:
+            case filterOptions.ALL:
                 transferFilterOptions.includes(option) ? 
                     changeCurrentTransferFilterOptions([]):
-                    changeCurrentTransferFilterOptions(filterTransferOptions);
+                    changeCurrentTransferFilterOptions(allOptions);
                 break;            
             default:
                 transferFilterOptions.includes(option) ? 
-                    changeCurrentTransferFilterOptions([...transferFilterOptions.filter((filter) => filter !== option && filter !== defaultFilterOption)]) :                     
-                    changeCurrentTransferFilterOptions([...transferFilterOptions, option].length === filterTransferOptions.length - 1 ? filterTransferOptions : [...transferFilterOptions, option]);                     
+                    changeCurrentTransferFilterOptions([...transferFilterOptions.filter((filter) => filter !== option && filter !== filterOptions.ALL)]) :                     
+                    changeCurrentTransferFilterOptions([...transferFilterOptions, option].length === allOptions.length - 1 ? allOptions : [...transferFilterOptions, option]);                     
                 break;
         }
     }
@@ -24,7 +25,7 @@ export default function TransferFilter({ transferFilterOptions, changeCurrentTra
             <h2 className="transfer-filter__title">Количество пересадок</h2>
             {isLoading && <Loading />}
             <ul className="transfer-options">
-                {filterTransferOptions && filterTransferOptions.map((option) => (
+                {allOptions && allOptions.map((option) => (
                     <li key={option} className="transfer-options__option">
                         <label>
                             <input 

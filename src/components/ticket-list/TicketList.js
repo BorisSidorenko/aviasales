@@ -2,7 +2,7 @@ import Ticket from "../ticket/Ticket";
 import "./TicketList.css";
 import TicketTemplate from "../ticket/TicketTemplate";
 
-export default function TicketList({ tickets, amountTodisplay, isLoading }) {       
+export default function TicketList({ tickets, amountTodisplay, isLoading }) {   
     const ticketsToDisplay = tickets.slice(0, amountTodisplay);
 
     return (
