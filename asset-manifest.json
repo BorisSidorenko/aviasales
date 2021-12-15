@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/BorisSidorenko/static/css/main.e588ed66.chunk.css",
-    "main.js": "/BorisSidorenko/static/js/main.9987d6a9.chunk.js",
-    "main.js.map": "/BorisSidorenko/static/js/main.9987d6a9.chunk.js.map",
-    "runtime-main.js": "/BorisSidorenko/static/js/runtime-main.7ffb05e4.js",
-    "runtime-main.js.map": "/BorisSidorenko/static/js/runtime-main.7ffb05e4.js.map",
-    "static/js/2.92e93b93.chunk.js": "/BorisSidorenko/static/js/2.92e93b93.chunk.js",
-    "static/js/2.92e93b93.chunk.js.map": "/BorisSidorenko/static/js/2.92e93b93.chunk.js.map",
-    "index.html": "/BorisSidorenko/index.html",
-    "static/css/main.e588ed66.chunk.css.map": "/BorisSidorenko/static/css/main.e588ed66.chunk.css.map",
-    "static/js/2.92e93b93.chunk.js.LICENSE.txt": "/BorisSidorenko/static/js/2.92e93b93.chunk.js.LICENSE.txt",
-    "static/media/Logo.472c0451.svg": "/BorisSidorenko/static/media/Logo.472c0451.svg",
-    "static/media/TransferFilter.css": "/BorisSidorenko/static/media/checkbox-unchecked.ad129cbf.svg"
+    "main.css": "/aviasales/static/css/main.2021af2b.chunk.css",
+    "main.js": "/aviasales/static/js/main.9987d6a9.chunk.js",
+    "main.js.map": "/aviasales/static/js/main.9987d6a9.chunk.js.map",
+    "runtime-main.js": "/aviasales/static/js/runtime-main.57fc6fe9.js",
+    "runtime-main.js.map": "/aviasales/static/js/runtime-main.57fc6fe9.js.map",
+    "static/js/2.92e93b93.chunk.js": "/aviasales/static/js/2.92e93b93.chunk.js",
+    "static/js/2.92e93b93.chunk.js.map": "/aviasales/static/js/2.92e93b93.chunk.js.map",
+    "index.html": "/aviasales/index.html",
+    "static/css/main.2021af2b.chunk.css.map": "/aviasales/static/css/main.2021af2b.chunk.css.map",
+    "static/js/2.92e93b93.chunk.js.LICENSE.txt": "/aviasales/static/js/2.92e93b93.chunk.js.LICENSE.txt",
+    "static/media/Logo.472c0451.svg": "/aviasales/static/media/Logo.472c0451.svg",
+    "static/media/TransferFilter.css": "/aviasales/static/media/checkbox-unchecked.ad129cbf.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7ffb05e4.js",
+    "static/js/runtime-main.57fc6fe9.js",
     "static/js/2.92e93b93.chunk.js",
-    "static/css/main.e588ed66.chunk.css",
+    "static/css/main.2021af2b.chunk.css",
     "static/js/main.9987d6a9.chunk.js"
   ]
 }
